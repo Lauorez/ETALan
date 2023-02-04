@@ -1,0 +1,618 @@
+[
+    {
+      "id": "/120/10251/0/0/12207",
+      "name": "Puffer"
+    },
+    {
+      "id": "/120/10251/0/0/12242",
+      "name": "Puffer oben"
+    },
+    {
+      "id": "/120/10251/12130/0/0",
+      "name": "Ladezeiten"
+    },
+    {
+      "id": "/120/10251/12130/0/1109",
+      "name": "Schaltzustand"
+    },
+    {
+      "id": "/120/10251/12130/0/1110",
+      "name": "Temperatur"
+    },
+    {
+      "id": "/120/10251/0/0/12211",
+      "name": "Puffer oben Min"
+    },
+    {
+      "id": "/120/10251/0/0/12209",
+      "name": "Puffer Soll"
+    },
+    {
+      "id": "/120/10251/0/0/12667",
+      "name": "Laden mit anderen Verbrauchern"
+    },
+    {
+      "id": "/120/10251/0/0/13535",
+      "name": "Einschaltdifferenz"
+    },
+    {
+      "id": "/120/10251/0/0/12932",
+      "name": "Laden mit Erzeuger"
+    },
+    {
+      "id": "/120/10251/0/0/12522",
+      "name": "Puffer mitte"
+    },
+    {
+      "id": "/120/10251/0/0/12244",
+      "name": "Puffer unten"
+    },
+    {
+      "id": "/120/10251/0/0/12212",
+      "name": "Puffer unten Aus"
+    },
+    {
+      "id": "/120/10251/0/0/12533",
+      "name": "geforderte Leistung"
+    },
+    {
+      "id": "/120/10251/0/0/12528",
+      "name": "Ladezustand"
+    },
+    {
+      "id": "/120/10251/0/0/12317",
+      "name": "Kaskade"
+    },
+    {
+      "id": "/120/10251/0/0/12270",
+      "name": "Freigabe Brenner"
+    },
+    {
+      "id": "/120/10251/0/0/12524",
+      "name": "Brenner starten unter"
+    },
+    {
+      "id": "/120/10251/0/0/12322",
+      "name": "Puffer oben Solar"
+    },
+    {
+      "id": "/120/10251/0/0/12408",
+      "name": "Puffer Soll Solar"
+    },
+    {
+      "id": "/120/10251/0/0/12407",
+      "name": "Puffer oben min Solar"
+    },
+    {
+      "id": "/120/10251/0/0/13507",
+      "name": "Puffer oben max Solar"
+    },
+    {
+      "id": "/120/10251/0/0/12432",
+      "name": "Min. Außentemp. Solarvorrang"
+    },
+    {
+      "id": "/120/10251/0/0/12778",
+      "name": "Priorität"
+    },
+    {
+      "id": "/120/10251/0/0/12245",
+      "name": "Puffer unten Solar"
+    },
+    {
+      "id": "/120/10251/0/0/12259",
+      "name": "Puffer unten max."
+    },
+    {
+      "id": "/120/10251/0/0/12427",
+      "name": "Solarvorrang"
+    },
+    {
+      "id": "/120/10251/0/0/12428",
+      "name": "Solarvorrang"
+    },
+    {
+      "id": "/120/10251/0/0/12429",
+      "name": "Beginn Solarvorrang"
+    },
+    {
+      "id": "/120/10251/0/0/12430",
+      "name": "Solarvorrang ändern ab"
+    },
+    {
+      "id": "/120/10251/0/0/12431",
+      "name": "Ende Solarvorrang"
+    },
+    {
+      "id": "/120/10251/0/0/12653",
+      "name": "Solar Überschuss"
+    },
+    {
+      "id": "/120/10251/0/0/12680",
+      "name": "ab Außentemperatur"
+    },
+    {
+      "id": "/120/10251/0/0/12654",
+      "name": "ab Puffer oben"
+    },
+    {
+      "id": "/120/10251/0/0/12655",
+      "name": "ab Puffer unten Solar"
+    },
+    {
+      "id": "/120/10251/0/0/12197",
+      "name": "Außentemperatur"
+    },
+    {
+      "id": "/120/10251/0/0/12770",
+      "name": "Priorität"
+    },
+    {
+      "id": "/120/10251/0/0/12182",
+      "name": "Sonstiges"
+    },
+    {
+      "id": "/120/10101/0/0/12090",
+      "name": "Heizkreis"
+    },
+    {
+      "id": "/120/10101/0/0/12092",
+      "name": "Betrieb"
+    },
+    {
+      "id": "/120/10101/12113/0/0",
+      "name": "Heizzeiten"
+    },
+    {
+      "id": "/120/10101/12113/0/1109",
+      "name": "Schaltzustand"
+    },
+    {
+      "id": "/120/10101/12113/0/1110",
+      "name": "Temperatur"
+    },
+    {
+      "id": "/120/10101/0/0/12241",
+      "name": "Vorlauf"
+    },
+    {
+      "id": "/120/10101/0/0/12111",
+      "name": "Heizkurve"
+    },
+    {
+      "id": "/120/10101/0/0/12240",
+      "name": "Schieber Position"
+    },
+    {
+      "id": "/120/10101/0/0/12104",
+      "name": "Vorlauf bei -10°C"
+    },
+    {
+      "id": "/120/10101/0/0/12103",
+      "name": "Vorlauf bei +10°C"
+    },
+    {
+      "id": "/120/10101/0/0/12107",
+      "name": "Vorlauf Absenkung"
+    },
+    {
+      "id": "/120/10101/12095/0/0",
+      "name": "Außentemperatur verzögert"
+    },
+    {
+      "id": "/120/10101/12095/0/1071",
+      "name": "Lag x"
+    },
+    {
+      "id": "/120/10101/12095/0/1072",
+      "name": "Lag Tf"
+    },
+    {
+      "id": "/120/10101/12095/0/1073",
+      "name": "Lag y"
+    },
+    {
+      "id": "/120/10101/0/0/12096",
+      "name": "Heizgrenze Tag"
+    },
+    {
+      "id": "/120/10101/0/0/12097",
+      "name": "Heizgrenze Nacht"
+    },
+    {
+      "id": "/120/10101/0/0/12100",
+      "name": "Freigabe Temperatur"
+    },
+    {
+      "id": "/120/10101/0/0/12215",
+      "name": "Freigabe Temperatur"
+    },
+    {
+      "id": "/120/10101/0/11124/0",
+      "name": "Heizkreispumpe"
+    },
+    {
+      "id": "/120/10101/0/11124/2001",
+      "name": "Anforderung"
+    },
+    {
+      "id": "/120/10101/0/0/12652",
+      "name": "Solar abschöpfen"
+    },
+    {
+      "id": "/120/10101/0/0/12182",
+      "name": "Sonstiges"
+    },
+    {
+      "id": "/120/10101/0/0/12125",
+      "name": "Tag Taste"
+    },
+    {
+      "id": "/120/10101/0/0/12126",
+      "name": "Auto Taste"
+    },
+    {
+      "id": "/120/10101/0/0/12230",
+      "name": "Nacht Taste"
+    },
+    {
+      "id": "/120/10101/0/0/12080",
+      "name": "Ein/Aus Taste"
+    },
+    {
+      "id": "/120/10101/0/0/12218",
+      "name": "Kommen Taste"
+    },
+    {
+      "id": "/120/10101/0/0/12231",
+      "name": "Gehen Taste"
+    },
+    {
+      "id": "/120/10101/0/0/12232",
+      "name": "Urlaub Beginn"
+    },
+    {
+      "id": "/120/10101/0/0/12239",
+      "name": "Urlaub Ende"
+    },
+    {
+      "id": "/120/10221/0/0/12183",
+      "name": "Zustand"
+    },
+    {
+      "id": "/120/10221/0/0/12275",
+      "name": "Kollektor"
+    },
+    {
+      "id": "/120/10221/0/0/12187",
+      "name": "Kollektor Min"
+    },
+    {
+      "id": "/120/10221/0/0/12197",
+      "name": "Außentemperatur"
+    },
+    {
+      "id": "/120/10221/0/0/12641",
+      "name": "Startfunktion"
+    },
+    {
+      "id": "/120/10221/0/0/12131",
+      "name": "Frostschutz"
+    },
+    {
+      "id": "/120/10221/0/0/12278",
+      "name": "Kollektorpumpe"
+    },
+    {
+      "id": "/120/10221/0/0/12781",
+      "name": "Speicher 1 unten"
+    },
+    {
+      "id": "/120/10221/0/0/12186",
+      "name": "Soll Differenz Kollektor"
+    },
+    {
+      "id": "/120/10221/0/0/12283",
+      "name": "Umschaltventil"
+    },
+    {
+      "id": "/120/10221/0/0/12185",
+      "name": "aktueller Speicher"
+    },
+    {
+      "id": "/120/10311/0/0/12416",
+      "name": "Externe Anforderung"
+    },
+    {
+      "id": "/120/10311/0/0/12151",
+      "name": "Wärmeanforderung"
+    },
+    {
+      "id": "/120/10311/0/0/12006",
+      "name": "Angeforderte Temperatur"
+    },
+    {
+      "id": "/120/10311/0/11071/0",
+      "name": "Externe Pumpe"
+    },
+    {
+      "id": "/120/10311/0/11071/2001",
+      "name": "Anforderung"
+    },
+    {
+      "id": "/120/10311/0/0/12100",
+      "name": "Freigabe Temperatur"
+    },
+    {
+      "id": "/120/10311/12095/0/0",
+      "name": "Außentemperatur verzögert"
+    },
+    {
+      "id": "/120/10311/12095/0/1071",
+      "name": "Lag x"
+    },
+    {
+      "id": "/120/10311/12095/0/1072",
+      "name": "Lag Tf"
+    },
+    {
+      "id": "/120/10311/12095/0/1073",
+      "name": "Lag y"
+    },
+    {
+      "id": "/120/10311/12419/0/0",
+      "name": "Bereitschaftszeiten"
+    },
+    {
+      "id": "/120/10311/12419/0/1109",
+      "name": "Schaltzustand"
+    },
+    {
+      "id": "/120/10311/12419/0/1110",
+      "name": "Temperatur"
+    },
+    {
+      "id": "/24/10301/0/0/12010",
+      "name": "Zählerstände"
+    },
+    {
+      "id": "/24/10301/0/0/12153",
+      "name": "Volllaststunden"
+    },
+    {
+      "id": "/24/10301/0/0/12404",
+      "name": "Volllaststunden seit Wartung"
+    },
+    {
+      "id": "/24/10301/0/0/12012",
+      "name": "Verbrauch seit Entaschung"
+    },
+    {
+      "id": "/24/10301/0/0/12013",
+      "name": "Verbrauch seit Aschebox leeren"
+    },
+    {
+      "id": "/24/10301/0/0/12000",
+      "name": "Kessel"
+    },
+    {
+      "id": "/24/10301/0/0/12421",
+      "name": "Einstellungen"
+    },
+    {
+      "id": "/24/10301/0/0/12388",
+      "name": "Brennstoff"
+    },
+    {
+      "id": "/24/10301/0/0/12389",
+      "name": "Wassergehalt"
+    },
+    {
+      "id": "/24/10301/0/0/12390",
+      "name": "Brennstoff Dichte [kg/m³]"
+    },
+    {
+      "id": "/24/10301/0/0/12400",
+      "name": "Abgasrückführung"
+    },
+    {
+      "id": "/24/10301/0/0/12443",
+      "name": "Kesselfolge"
+    },
+    {
+      "id": "/24/10301/0/0/13442",
+      "name": "Bodenrührwerk befüllen"
+    },
+    {
+      "id": "/24/10301/0/0/12050",
+      "name": "Entaschung"
+    },
+    {
+      "id": "/24/10301/0/0/12073",
+      "name": "Entaschen nach min."
+    },
+    {
+      "id": "/24/10301/0/0/12074",
+      "name": "Entaschen nach max."
+    },
+    {
+      "id": "/24/10301/0/0/12632",
+      "name": "Beginn Ruhezeit WT-Reinigung"
+    },
+    {
+      "id": "/24/10301/0/0/12633",
+      "name": "Dauer Ruhezeit WT-Reinigung"
+    },
+    {
+      "id": "/24/10301/0/0/12342",
+      "name": "Ascheschnecke"
+    },
+    {
+      "id": "/24/10301/0/11043/0",
+      "name": "Wärmetauscher Reinigung"
+    },
+    {
+      "id": "/24/10301/0/11043/2001",
+      "name": "Anforderung"
+    },
+    {
+      "id": "/24/10301/0/0/12120",
+      "name": "Aschebox leeren nach"
+    },
+    {
+      "id": "/24/10301/0/0/12161",
+      "name": "Kessel"
+    },
+    {
+      "id": "/24/10301/0/0/12001",
+      "name": "Kessel Soll"
+    },
+    {
+      "id": "/24/10301/0/0/12204",
+      "name": "Angeforderte Leistung"
+    },
+    {
+      "id": "/24/10301/0/0/12006",
+      "name": "Angeforderte Temperatur"
+    },
+    {
+      "id": "/24/10301/0/0/12317",
+      "name": "Kaskade"
+    },
+    {
+      "id": "/24/10301/0/0/12220",
+      "name": "Rücklauf"
+    },
+    {
+      "id": "/24/10301/0/11163/0",
+      "name": "Rücklaufmischer"
+    },
+    {
+      "id": "/24/10301/0/11163/2120",
+      "name": "Soll Temperatur"
+    },
+    {
+      "id": "/24/10301/0/11163/2002",
+      "name": "Zustand"
+    },
+    {
+      "id": "/24/10301/0/11163/2121",
+      "name": "Ist Temperatur"
+    },
+    {
+      "id": "/24/10301/0/11163/2127",
+      "name": "Position"
+    },
+    {
+      "id": "/24/10301/0/11123/0",
+      "name": "Kesselpumpe"
+    },
+    {
+      "id": "/24/10301/0/11123/2001",
+      "name": "Anforderung"
+    },
+    {
+      "id": "/24/10301/0/11123/2130",
+      "name": "Ausgang"
+    },
+    {
+      "id": "/24/10301/0/0/12162",
+      "name": "Abgas"
+    },
+    {
+      "id": "/24/10301/0/0/13266",
+      "name": "Emissionsmessung"
+    },
+    {
+      "id": "/24/10301/0/0/12116",
+      "name": "Art der Messung"
+    },
+    {
+      "id": "/24/10301/0/0/13267",
+      "name": "Beginn der Messung"
+    },
+    {
+      "id": "/24/10301/0/0/13268",
+      "name": "Verriegelungsdauer"
+    },
+    {
+      "id": "/24/10301/0/0/13269",
+      "name": "Jetzt starten"
+    },
+    {
+      "id": "/24/10301/0/0/13277",
+      "name": "Messung deaktivieren"
+    },
+    {
+      "id": "/24/10301/0/0/12165",
+      "name": "Abgasgebläse"
+    },
+    {
+      "id": "/24/10301/0/0/12164",
+      "name": "Restsauerstoff"
+    },
+    {
+      "id": "/24/10301/0/0/12534",
+      "name": "O2 Sollwert anheben"
+    },
+    {
+      "id": "/24/10301/0/0/12058",
+      "name": "Austragung"
+    },
+    {
+      "id": "/24/10301/0/0/12398",
+      "name": "Zustand"
+    },
+    {
+      "id": "/24/10301/0/11061/0",
+      "name": "Stoker Einheit"
+    },
+    {
+      "id": "/24/10301/0/11061/2090",
+      "name": "Taktrate"
+    },
+    {
+      "id": "/24/10301/0/11061/2201",
+      "name": "Stoker"
+    },
+    {
+      "id": "/24/10301/0/11061/2205",
+      "name": "Strom"
+    },
+    {
+      "id": "/24/10301/0/11061/2233",
+      "name": "Laufzeitverhältnis"
+    },
+    {
+      "id": "/24/10301/0/11061/2203",
+      "name": "Austragung"
+    },
+    {
+      "id": "/24/10301/0/11061/2216",
+      "name": "Strom"
+    },
+    {
+      "id": "/24/10301/0/0/12182",
+      "name": "Sonstiges"
+    },
+    {
+      "id": "/24/10301/0/0/12080",
+      "name": "Ein/Aus Taste"
+    },
+    {
+      "id": "/24/10301/0/0/12112",
+      "name": "Entaschentaste"
+    },
+    {
+      "id": "/24/10241/0/0/10990",
+      "name": "Eingänge"
+    },
+    {
+      "id": "/24/10241/0/0/12197",
+      "name": "Außentemperatur"
+    },
+    {
+      "id": "/24/10241/0/0/12256",
+      "name": "System"
+    }
+  ]

@@ -1,0 +1,14 @@
+{
+  "name": "etalan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/backend/server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "xml2js": "^0.4.23"
+  }
+}

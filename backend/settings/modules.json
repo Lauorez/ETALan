@@ -1,0 +1,1080 @@
+[
+    {
+      "id": "/120/10251/0/0/12207",
+      "name": "Puffer",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12242",
+      "name": "Puffer oben",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/12130/0/0",
+      "name": "Ladezeiten",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/12130/0/1109",
+      "name": "Schaltzustand",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/12130/0/1110",
+      "name": "Temperatur",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12211",
+      "name": "Puffer oben Min",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12209",
+      "name": "Puffer Soll",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12667",
+      "name": "Laden mit anderen Verbrauchern",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/13535",
+      "name": "Einschaltdifferenz",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12932",
+      "name": "Laden mit Erzeuger",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12522",
+      "name": "Puffer mitte",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12244",
+      "name": "Puffer unten",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12212",
+      "name": "Puffer unten Aus",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12533",
+      "name": "geforderte Leistung",
+      "unit": "kW",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12528",
+      "name": "Ladezustand",
+      "unit": "%",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12317",
+      "name": "Kaskade",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12270",
+      "name": "Freigabe Brenner",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12524",
+      "name": "Brenner starten unter",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12322",
+      "name": "Puffer oben Solar",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12408",
+      "name": "Puffer Soll Solar",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12407",
+      "name": "Puffer oben min Solar",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/13507",
+      "name": "Puffer oben max Solar",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12432",
+      "name": "Min. Außentemp. Solarvorrang",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12778",
+      "name": "Priorität",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12245",
+      "name": "Puffer unten Solar",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12259",
+      "name": "Puffer unten max.",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12427",
+      "name": "Solarvorrang",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12428",
+      "name": "Solarvorrang",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12429",
+      "name": "Beginn Solarvorrang",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12430",
+      "name": "Solarvorrang ändern ab",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12431",
+      "name": "Ende Solarvorrang",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12653",
+      "name": "Solar Überschuss",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12680",
+      "name": "ab Außentemperatur",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12654",
+      "name": "ab Puffer oben",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12655",
+      "name": "ab Puffer unten Solar",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12197",
+      "name": "Außentemperatur",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10251/0/0/12770",
+      "name": "Priorität",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10251/0/0/12182",
+      "name": "Sonstiges",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "0"
+    },
+    {
+      "id": "/120/10101/0/0/12090",
+      "name": "Heizkreis",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/0/12092",
+      "name": "Betrieb",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/12113/0/0",
+      "name": "Heizzeiten",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/12113/0/1109",
+      "name": "Schaltzustand",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/12113/0/1110",
+      "name": "Temperatur",
+      "unit": "",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/0/12241",
+      "name": "Vorlauf",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/0/12111",
+      "name": "Heizkurve",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/0/12240",
+      "name": "Schieber Position",
+      "unit": "%",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/0/12104",
+      "name": "Vorlauf bei -10°C",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/0/12103",
+      "name": "Vorlauf bei +10°C",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/0/12107",
+      "name": "Vorlauf Absenkung",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/12095/0/0",
+      "name": "Außentemperatur verzögert",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/12095/0/1071",
+      "name": "Lag x",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/12095/0/1072",
+      "name": "Lag Tf",
+      "unit": "",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/12095/0/1073",
+      "name": "Lag y",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/0/12096",
+      "name": "Heizgrenze Tag",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/0/12097",
+      "name": "Heizgrenze Nacht",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/0/12100",
+      "name": "Freigabe Temperatur",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/0/12215",
+      "name": "Freigabe Temperatur",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10101/0/11124/0",
+      "name": "Heizkreispumpe",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/11124/2001",
+      "name": "Anforderung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/0/12652",
+      "name": "Solar abschöpfen",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/0/12182",
+      "name": "Sonstiges",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "0"
+    },
+    {
+      "id": "/120/10101/0/0/12125",
+      "name": "Tag Taste",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/0/12126",
+      "name": "Auto Taste",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/0/12230",
+      "name": "Nacht Taste",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/0/12080",
+      "name": "Ein/Aus Taste",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/0/12218",
+      "name": "Kommen Taste",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/0/12231",
+      "name": "Gehen Taste",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/0/12232",
+      "name": "Urlaub Beginn",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10101/0/0/12239",
+      "name": "Urlaub Ende",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10221/0/0/12183",
+      "name": "Zustand",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10221/0/0/12275",
+      "name": "Kollektor",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10221/0/0/12187",
+      "name": "Kollektor Min",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10221/0/0/12197",
+      "name": "Außentemperatur",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10221/0/0/12641",
+      "name": "Startfunktion",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10221/0/0/12131",
+      "name": "Frostschutz",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10221/0/0/12278",
+      "name": "Kollektorpumpe",
+      "unit": "%",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10221/0/0/12781",
+      "name": "Speicher 1 unten",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10221/0/0/12186",
+      "name": "Soll Differenz Kollektor",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10221/0/0/12283",
+      "name": "Umschaltventil",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10221/0/0/12185",
+      "name": "aktueller Speicher",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10311/0/0/12416",
+      "name": "Externe Anforderung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10311/0/0/12151",
+      "name": "Wärmeanforderung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10311/0/0/12006",
+      "name": "Angeforderte Temperatur",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10311/0/11071/0",
+      "name": "Externe Pumpe",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10311/0/11071/2001",
+      "name": "Anforderung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10311/0/0/12100",
+      "name": "Freigabe Temperatur",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10311/12095/0/0",
+      "name": "Außentemperatur verzögert",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10311/12095/0/1071",
+      "name": "Lag x",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10311/12095/0/1072",
+      "name": "Lag Tf",
+      "unit": "",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10311/12095/0/1073",
+      "name": "Lag y",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/120/10311/12419/0/0",
+      "name": "Bereitschaftszeiten",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10311/12419/0/1109",
+      "name": "Schaltzustand",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/120/10311/12419/0/1110",
+      "name": "Temperatur",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12010",
+      "name": "Zählerstände",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "0"
+    },
+    {
+      "id": "/24/10301/0/0/12153",
+      "name": "Volllaststunden",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12404",
+      "name": "Volllaststunden seit Wartung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12012",
+      "name": "Verbrauch seit Entaschung",
+      "unit": "kg",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12013",
+      "name": "Verbrauch seit Aschebox leeren",
+      "unit": "kg",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12000",
+      "name": "Kessel",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12421",
+      "name": "Einstellungen",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "0"
+    },
+    {
+      "id": "/24/10301/0/0/12388",
+      "name": "Brennstoff",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12389",
+      "name": "Wassergehalt",
+      "unit": "%",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12390",
+      "name": "Brennstoff Dichte [kg/m³]",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12400",
+      "name": "Abgasrückführung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12443",
+      "name": "Kesselfolge",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/13442",
+      "name": "Bodenrührwerk befüllen",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12050",
+      "name": "Entaschung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12073",
+      "name": "Entaschen nach min.",
+      "unit": "kg",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12074",
+      "name": "Entaschen nach max.",
+      "unit": "kg",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12632",
+      "name": "Beginn Ruhezeit WT-Reinigung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12633",
+      "name": "Dauer Ruhezeit WT-Reinigung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12342",
+      "name": "Ascheschnecke",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/11043/0",
+      "name": "Wärmetauscher Reinigung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/11043/2001",
+      "name": "Anforderung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12120",
+      "name": "Aschebox leeren nach",
+      "unit": "kg",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12161",
+      "name": "Kessel",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12001",
+      "name": "Kessel Soll",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12204",
+      "name": "Angeforderte Leistung",
+      "unit": "kW",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12006",
+      "name": "Angeforderte Temperatur",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12317",
+      "name": "Kaskade",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12220",
+      "name": "Rücklauf",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/11163/0",
+      "name": "Rücklaufmischer",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/11163/2120",
+      "name": "Soll Temperatur",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/11163/2002",
+      "name": "Zustand",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/11163/2121",
+      "name": "Ist Temperatur",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/11163/2127",
+      "name": "Position",
+      "unit": "%",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/11123/0",
+      "name": "Kesselpumpe",
+      "unit": "%",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/11123/2001",
+      "name": "Anforderung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/11123/2130",
+      "name": "Ausgang",
+      "unit": "%",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12162",
+      "name": "Abgas",
+      "unit": "°C",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/13266",
+      "name": "Emissionsmessung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12116",
+      "name": "Art der Messung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/13267",
+      "name": "Beginn der Messung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/13268",
+      "name": "Verriegelungsdauer",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/13269",
+      "name": "Jetzt starten",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/13277",
+      "name": "Messung deaktivieren",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12165",
+      "name": "Abgasgebläse",
+      "unit": "U/min",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12164",
+      "name": "Restsauerstoff",
+      "unit": "%",
+      "decPlaces": "1",
+      "scaleFactor": "100"
+    },
+    {
+      "id": "/24/10301/0/0/12534",
+      "name": "O2 Sollwert anheben",
+      "unit": "%",
+      "decPlaces": "1",
+      "scaleFactor": "100"
+    },
+    {
+      "id": "/24/10301/0/0/12058",
+      "name": "Austragung",
+      "unit": "%",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/0/12398",
+      "name": "Zustand",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/11061/0",
+      "name": "Stoker Einheit",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/11061/2090",
+      "name": "Taktrate",
+      "unit": "%",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/11061/2201",
+      "name": "Stoker",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/11061/2205",
+      "name": "Strom",
+      "unit": "mA",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/11061/2233",
+      "name": "Laufzeitverhältnis",
+      "unit": "%",
+      "decPlaces": "0",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10301/0/11061/2203",
+      "name": "Austragung",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/11061/2216",
+      "name": "Strom",
+      "unit": "mA",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12182",
+      "name": "Sonstiges",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "0"
+    },
+    {
+      "id": "/24/10301/0/0/12080",
+      "name": "Ein/Aus Taste",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10301/0/0/12112",
+      "name": "Entaschentaste",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "1"
+    },
+    {
+      "id": "/24/10241/0/0/10990",
+      "name": "Eingänge",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "0"
+    },
+    {
+      "id": "/24/10241/0/0/12197",
+      "name": "Außentemperatur",
+      "unit": "°C",
+      "decPlaces": "1",
+      "scaleFactor": "10"
+    },
+    {
+      "id": "/24/10241/0/0/12256",
+      "name": "System",
+      "unit": "",
+      "decPlaces": "0",
+      "scaleFactor": "0"
+    }
+  ]

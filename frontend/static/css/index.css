@@ -1,0 +1,161 @@
+body {
+    --main-bg: #1a1a1a;
+    --nav-bg: #222;
+    background-color: var(--main-bg);
+    --nav-width: 300px;
+    margin: 0 0 0 var(--nav-width);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    height: 100vh;
+}
+
+@media (max-width: 600px) {
+    body {
+        --nav-width: 60px;
+    }
+    .nav__link > label{
+        display: none;
+    }
+}
+
+table {
+    align-self: center;
+    width: 100%;
+    height: 50%;
+    padding-left: 10px
+}
+
+th {
+    color: #fff;
+    font-size: 20px;
+    text-align: left;
+    border-bottom: 3px solid #eee
+}
+
+td {
+    color: #fff;
+    border-bottom: 1px solid #eee
+}
+
+i {
+    font-size: 18pt;
+    pointer-events: none;
+}
+
+button {
+    font-size: 20px;
+    margin: 10px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: block;
+    border-radius: 24px;
+    border: 2px solid #3498db;
+    color: white;
+    outline: none;
+    background-color: var(--main-bg);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3498db
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--nav-width);
+    height: 100vh;
+    background: var(--nav-bg);
+}
+
+.nav__link {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #eeeeee;
+    font-weight: 500;
+}
+
+.nav__link:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav__label {
+    pointer-events: none;
+}
+
+[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    display: block;
+    border-radius: 5px;
+    border: 2px solid #eee;
+    background-color: var(--main-bg);
+}
+
+.childcontainer {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 95vh;
+    margin: 10px;
+    margin-bottom: 0 !important;
+    color: #eee;
+}
+
+#quick {
+    display: flex;
+    flex-direction: row;
+}
+
+.controlBtn {
+    margin-top: 20px;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    text-align: center;
+}
+
+#submit {
+    margin-top: -10px;
+}
+
+.input {
+    background: var(--main-bg);
+    color: #eee;
+    border: 2px solid #3498db;
+    border-radius: 3px;
+    font-size: 20px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.addLabel {
+    margin-left: 10px;
+    color: #eee;
+    font-size: 20px;
+}
+
+.scriptLine {
+    display: flex;
+    align-items: center;
+    border: 2px solid rgba(52, 152, 219, 0.5);
+    border-radius: 3px;
+    width: fit-content;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#deleteBtn {
+    width: fit-content;
+}
