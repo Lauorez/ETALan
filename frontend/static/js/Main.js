@@ -2,8 +2,6 @@ import AbstractView from "./AbstractView.js";
 import { getJson, postJson, backend } from "./GlobalFunctions.js";
 import { router } from "./index.js";
 
-var ids = []
-
 export default class extends AbstractView {
     constructor() {
         super();
@@ -27,7 +25,15 @@ export default class extends AbstractView {
         headerRow.appendChild(Aendern);
 
         tbody.appendChild(headerRow);
+        
+        table.appendChild(tbody)
 
+        return `${table.outerHTML}`;
+    }
+
+    async register() {
+        var config = await getJson(backend + "/settings/config")
+        var tbody = document.querySelector("tbody")
         for (var i = 0; i < config.length; i++) {
             var entry = config[i];
 
@@ -50,27 +56,7 @@ export default class extends AbstractView {
             btn.innerHTML = "<i class=\"fa-solid fa-pen\"></i>";
             btn.className = "btn-table";
             btn.id = id;
-            ids.push(id)
-            
-            cell3.appendChild(btn);
-            
-
-            row.appendChild(cell1);
-            row.appendChild(cell2);
-            row.appendChild(cell3);
-
-            tbody.appendChild(row)
-
-        }
-        
-        table.appendChild(tbody)
-
-        return `${table.outerHTML}`;
-    }
-
-    async register() {
-        for (var i in ids) {
-            document.getElementById(`${ids[i]}`).onclick = async e => {
+            btn.onclick = async e => {
                 var config = await getJson(backend + "/settings/config")
                 var configMatch = config.find(mod => mod.id === e.target.id)
                 var scaleFactor = configMatch.scaleFactor
@@ -83,7 +69,14 @@ export default class extends AbstractView {
                 if (resp.code != 200) alert(resp.json.message)
                 router()
             }
+            cell3.appendChild(btn);
+            
+
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            row.appendChild(cell3);
+
+            tbody.appendChild(row)
         }
-        
     }
 }

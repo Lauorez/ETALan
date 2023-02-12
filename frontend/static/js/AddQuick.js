@@ -35,6 +35,34 @@ export default class extends AbstractView {
     async newScriptLine() {
         var scriptLine = document.createElement("div")
         scriptLine.className = "scriptLine"
+
+        var actionLabel = document.createElement("label")
+        actionLabel.textContent = "Aktion: "
+        actionLabel.className = "addLabel"
+        var actionSelector = document.createElement("select")
+        actionSelector.name = "actionSelector"
+        actionSelector.id = "actionSelector"
+        actionSelector.className = "input"
+        var saveValueOption = document.createElement("option")
+        saveValueOption.value = "save"
+        saveValueOption.text = "Wert speichern"
+        var moduleOption = document.createElement("option")
+        moduleOption.value = "module"
+        moduleOption.text = "Modul"
+        actionSelector.appendChild(moduleOption)
+        actionSelector.appendChild(saveValueOption)
+        var content = await this.moduleContent()
+
+        scriptLine.appendChild(actionLabel)
+        scriptLine.appendChild(actionSelector)
+        scriptLine.appendChild(content)
+
+        return scriptLine
+    }
+
+    async moduleContent() {
+        var moduleContent = document.createElement("div")
+        moduleContent.className = "scriptLineContent"
         var scriptModule = await this.newModuleSelector()
         scriptModule.className = "input"
         scriptModule.id = "moduleSelect"
@@ -55,18 +83,32 @@ export default class extends AbstractView {
         optionDynamicValue.value = "dynamic"
         modeSelector.appendChild(optionDynamicValue)
         modeSelector.appendChild(optionStaticValue)
-        modeSelector.selectedIndex = 0
         var inputDiv = document.createElement("div")
         inputDiv.id = "inputDiv"
 
-        
-        scriptLine.appendChild(scriptModuleLabel)
-        scriptLine.appendChild(scriptModule)
-        scriptLine.appendChild(modeSelectorLabel)
-        scriptLine.appendChild(modeSelector)
-        scriptLine.appendChild(inputDiv)
+        moduleContent.appendChild(scriptModuleLabel)
+        moduleContent.appendChild(scriptModule)
+        moduleContent.appendChild(modeSelectorLabel)
+        moduleContent.appendChild(modeSelector)
+        moduleContent.appendChild(inputDiv)
 
-        return scriptLine
+        return moduleContent
+    }
+
+    async saveContent() {
+        var saveContent = document.createElement("div")
+        saveContent.className = "scriptLineContent"
+        var scriptModule = await this.newModuleSelector()
+        scriptModule.className = "input"
+        scriptModule.id = "moduleSelect"
+        var scriptModuleLabel = document.createElement("label")
+        scriptModuleLabel.textContent = "Modul: "
+        scriptModuleLabel.className = "addLabel"
+
+        saveContent.appendChild(scriptModuleLabel)
+        saveContent.appendChild(scriptModule)
+
+        return saveContent
     }
 
     async newModuleSelector() {
@@ -82,61 +124,110 @@ export default class extends AbstractView {
         return scriptModule
     }
 
+    async dynamicInputDiv() {
+        var inputDiv = document.createElement("div")
+        var relativeModuleSelector = await this.newModuleSelector()
+        relativeModuleSelector.id = "relativeModuleSelector"
+        inputDiv.appendChild(relativeModuleSelector)
+        var relativeModuleType = document.createElement("select")
+        relativeModuleType.className = "input"
+        relativeModuleType.id = "relativeModuleType"
+        var optionNow = document.createElement("option")
+        var optionSaved = document.createElement("option")
+        optionNow.value = "now"
+        optionNow.text = "aktuell"
+        optionSaved.value = "saved"
+        optionSaved.text = "gespeichert"
+        relativeModuleType.appendChild(optionNow)
+        relativeModuleType.appendChild(optionSaved)
+        inputDiv.appendChild(relativeModuleType)
+        var operationSelector = document.createElement("select")
+        operationSelector.className = "input"
+        operationSelector.id = "operation"
+        var optionAdd = document.createElement("option")
+        var optionDiff = document.createElement("option")
+        var optionMult = document.createElement("option")
+        var optionDiv = document.createElement("option")
+        optionAdd.value = "+"
+        optionAdd.text = "+"
+        optionDiff.value = "-"
+        optionDiff.text = "-"
+        optionMult.value = "*"
+        optionMult.text = "*"
+        optionDiv.value = "/"
+        optionDiv.text = "/"
+        operationSelector.appendChild(optionAdd)
+        operationSelector.appendChild(optionDiff)
+        operationSelector.appendChild(optionMult)
+        operationSelector.appendChild(optionDiv)
+        inputDiv.appendChild(operationSelector)
+        var inputBox = document.createElement("input")
+        inputBox.id = "value"
+        inputBox.placeholder = "Wert"
+        inputBox.className = "input"
+        inputDiv.appendChild(inputBox)
+
+        return inputDiv
+    }
+
+    async modeSelectorEvent(elem) {
+        elem.onchange = async e => {
+            var inputDiv = elem.parentElement.querySelector("#inputDiv")
+            inputDiv.innerHTML = ""
+            if (elem.value == "static") {
+                var inputBox = document.createElement("input")
+                inputBox.placeholder = "Wert"
+                inputBox.className = "input"
+                inputBox.id = "value"
+                inputDiv.appendChild(inputBox)
+            } else {
+                inputDiv.innerHTML = (await this.dynamicInputDiv()).innerHTML
+            }
+        }
+    }
+
     async register() {
+        document.getElementsByName("actionSelector").forEach(elem => {
+            elem.onchange = async e => {
+                if (elem.value == "module") {
+                    var content = elem.parentElement.querySelector(".scriptLineContent")
+                    content.innerHTML = (await this.moduleContent()).innerHTML
+                    document.getElementsByName("modeSelector").forEach(elem => {
+                        this.modeSelectorEvent(elem)
+                        elem.dispatchEvent(new Event("change"))
+                    })
+                } else {
+                    var content = elem.parentElement.querySelector(".scriptLineContent")
+                    content.innerHTML = (await this.saveContent()).innerHTML
+                }
+            }
+        })
         document.getElementById("addScriptLine").onclick = async e => {
             document.getElementById(e.target.id).insertAdjacentElement("beforebegin", await this.newScriptLine())
             this.register()
         }
         document.getElementsByName("modeSelector").forEach(elem => {
-            elem.onchange = async e => {
-                var inputDiv = elem.parentElement.querySelector("#inputDiv")
-                inputDiv.innerHTML = ""
-                if (elem.value == "static") {
-                    var inputBox = document.createElement("input")
-                    inputBox.placeholder = "Wert"
-                    inputBox.className = "input"
-                    inputBox.id = "value"
-                    inputDiv.appendChild(inputBox)
-                } else {
-                    var relativeModuleSelector = await this.newModuleSelector()
-                    relativeModuleSelector.id = "relativeModuleSelector"
-                    inputDiv.appendChild(relativeModuleSelector)
-                    var operationSelector = document.createElement("select")
-                    operationSelector.className = "input"
-                    operationSelector.id = "operation"
-                    var optionAdd = document.createElement("option")
-                    var optionDiff = document.createElement("option")
-                    var optionMult = document.createElement("option")
-                    var optionDiv = document.createElement("option")
-                    optionAdd.value = "+"
-                    optionAdd.text = "+"
-                    optionDiff.value = "-"
-                    optionDiff.text = "-"
-                    optionMult.value = "*"
-                    optionMult.text = "*"
-                    optionDiv.value = "/"
-                    optionDiv.text = "/"
-                    operationSelector.appendChild(optionAdd)
-                    operationSelector.appendChild(optionDiff)
-                    operationSelector.appendChild(optionMult)
-                    operationSelector.appendChild(optionDiv)
-                    inputDiv.appendChild(operationSelector)
-                    var inputBox = document.createElement("input")
-                    inputBox.id = "value"
-                    inputBox.placeholder = "Wert"
-                    inputBox.className = "input"
-                    inputDiv.appendChild(inputBox)
-                }
-            }
+            this.modeSelectorEvent(elem)
             elem.dispatchEvent(new Event("change"))
         })
         var btnSave = document.getElementById("btnSave")
         btnSave.onclick = async e => {
             var name = document.getElementById("inputName").value
             var scripts = []
+            var saves = []
             var scriptLines = document.getElementsByClassName("scriptLine")
             for (var i = 0; i < scriptLines.length; i++) {
                 var sl = scriptLines[i]
+                var action = sl.querySelector("#actionSelector").value
+                if (action == "save") {
+                    var moduleId = sl.querySelector("#moduleSelect").value
+                    var name = sl.querySelector("#moduleSelect").textContent
+                    scripts.push({
+                        action: action,
+                        id: moduleId
+                    })
+                    continue
+                }
                 var id = sl.querySelector("#moduleSelect").value
                 var value = sl.querySelector("#value").value
                 if (sl.querySelector("#relativeModuleSelector")) {
@@ -144,8 +235,13 @@ export default class extends AbstractView {
                     var operation = sl.querySelector("#operation").value
                     var relVal = sl.querySelector("#value").value
                     value = `$${relativeId}$${operation}${relVal}`
+                    var relativeModuleType = sl.querySelector("#relativeModuleType")
+                    if (relativeModuleType.value == "saved") {
+                        value = value.replaceAll("$", "%")
+                    }
                 }
                 scripts.push({
+                    action: action,
                     id: id,
                     value: value
                 })
@@ -155,8 +251,7 @@ export default class extends AbstractView {
                 scripts: scripts
             }
             var resp = await postJson(backend + "/settings/quick", body)
-            if (resp.code == 200) alert("Erfolg!"); else alert("Error!");
-            navigateTo("/quick")
+            if (resp.code == 200) navigateTo("/quick"); else alert("Error!")
         }
     }
 }

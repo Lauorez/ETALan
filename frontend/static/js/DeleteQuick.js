@@ -40,7 +40,7 @@ export default class extends AbstractView {
             var elems = document.querySelectorAll("[type='checkbox']");
             elems.forEach(cb => {
                 if (cb.checked) {
-                    checked.push(elem.id)
+                    checked.push(cb.id)
                 }
             })
             var resp = await postJson(backend + "/settings/quick/delete", checked)

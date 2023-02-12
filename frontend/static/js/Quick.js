@@ -12,6 +12,7 @@ export default class extends AbstractView {
     async getHtml() {
         var container = document.createElement("div")
         container.id = "quick"
+        container.className = "container"
         var quicks = await getJson(backend + "/settings/quick")
         quicks.forEach(quick => {
             var btn = document.createElement("button")
@@ -40,6 +41,10 @@ export default class extends AbstractView {
             document.getElementById(quick.name).onclick = async e => {
                 quick.scripts.forEach(async script => {
                     var id = script.id
+                    if (script.action == "save") {
+                        var req = await postJson(backend + "/var/save", script)
+                        return
+                    }
                     var value = script.value
                     if (script.value.includes("$")) {
                         var first = script.value.indexOf("$")
@@ -51,6 +56,16 @@ export default class extends AbstractView {
                         var req = await getJson(backend + "/var/get", getBody)
                         var moduleValue = req["strValue"]
                         value = parseFloat(eval(script.value.replace(`$${insertId}$`, moduleValue).replace(",", ".")))
+                    } else if (script.value.includes("%")) {
+                        var first = script.value.indexOf("%")
+                        var last = script.value.lastIndexOf("%")
+                        var insertId = script.value.substr(first, last).replace("%", "")
+                        var getBody = {
+                            id: insertId
+                        }
+                        var req = await getJson(backend + "/var/save", getBody)
+                        var moduleValue = req["strValue"]
+                        value = parseFloat(eval(script.value.replace(`%${insertId}%`, moduleValue).replace(",", ".")))
                     }
                     var config = await getJson(backend + "/settings/config")
                     var module = config.find(mod => mod.id === id)

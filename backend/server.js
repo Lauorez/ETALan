@@ -4,6 +4,8 @@ const express = require('express')
 const cors = require('cors');
 const xml2js = require('xml2js')
 const fs = require('fs')
+const expressWinston = require('express-winston');
+const winston = require('winston');
 
 const app = express()
 const parser = new xml2js.Parser();
@@ -16,6 +18,21 @@ const host = "192.168.178.250"
 app.use(express.static('settings'))
 app.use(express.json())
 app.use(cors())
+app.use(expressWinston.logger({
+    transports: [
+        new winston.transports.Console(),
+        new winston.transports.File({ filename: "logs/latest.log"})
+    ],
+    format: winston.format.combine(
+        winston.format.colorize(),
+        winston.format.json()
+    ),
+    meta: false,
+    msg: "HTTP  ",
+    expressFormat: true,
+    colorize: false,
+    ignoreRoute: function (req, res) { return false; }
+}))
 
 //#region Functions
 
@@ -104,6 +121,18 @@ app.get('/var/get', (req, res) => {
     })
 })
 
+app.get("/var/save", (req, res) => {
+    var id = req.query.id
+    var saved = JSON.parse(fs.readFileSync(path.resolve("settings", "saved.json")).toString())
+    if (saved[id]) {
+        res.status = 200
+        res.send(saved[id])
+    } else {
+        res.status = 500
+        res.end()
+    }
+})
+
 //#endregion
 
 //#region POST
@@ -146,13 +175,19 @@ app.post("/settings/quick", (req, res) => {
     })
 })
 
-app.post("/settings/quick", (req, res) => {
+app.post("/settings/quick/delete", (req, res) => {
     var toRemove = req.body
     var quicks = JSON.parse(fs.readFileSync(path.resolve("settings", "quick.json")))
     toRemove.forEach(element => {
-        quicks.find(quick => quick.name == element)
-        //TODO: Element entfernen
+        var match = quicks.find(quick => quick.name == element)
+        var index = quicks.indexOf(match)
+        quicks.splice(index, 1)
     });
+    fs.writeFile(path.resolve("settings", "quick.json"), JSON.stringify(quicks), () => {
+        res.status = 200
+        res.write(JSON.stringify(successAnswer))
+        res.end()
+    })
 })
 
 app.post("/var/set", (req, res) => {
@@ -169,6 +204,18 @@ app.post("/var/set", (req, res) => {
             res.status = 500;
             res.end()
         }
+    })
+})
+
+app.post("/var/save", (req, res) => {
+    var id = req.body.id;
+    getVariable(id, value => {
+        var saved = JSON.parse(fs.readFileSync(path.resolve("settings", "saved.json")).toString())
+        saved.id = value
+        fs.writeFileSync(path.resolve("settings", "saved.json"), JSON.stringify(saved))
+        res.status = 200
+        res.write(JSON.stringify(successAnswer))
+        res.end()
     })
 })
 

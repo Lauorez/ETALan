@@ -31,8 +31,9 @@ export default class extends AbstractView {
         var submitBtn = document.createElement("button");
         submitBtn.innerHTML = "Speichern <i class=\"fa-solid fa-check\"></i>";
         submitBtn.id = "submit";
+        maincontainer.appendChild(submitBtn)
 
-        return maincontainer.outerHTML + submitBtn.outerHTML;
+        return maincontainer.outerHTML;
     }
 
     async register() {
