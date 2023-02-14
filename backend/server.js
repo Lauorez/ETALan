@@ -6,14 +6,15 @@ const xml2js = require('xml2js')
 const fs = require('fs')
 const expressWinston = require('express-winston');
 const winston = require('winston');
+require('dotenv').config()
 
 const app = express()
 const parser = new xml2js.Parser();
 
-const port = 3001
+const port = process.env.PORT
 const PREFIX = "[ETALan]"
 const version = "1.0.0"
-const host = "192.168.178.250"
+const host = process.env.HOST
 
 app.use(express.static('settings'))
 app.use(express.json())
