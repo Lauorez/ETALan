@@ -214,14 +214,12 @@ export default class extends AbstractView {
         btnSave.onclick = async e => {
             var name = document.getElementById("inputName").value
             var scripts = []
-            var saves = []
             var scriptLines = document.getElementsByClassName("scriptLine")
             for (var i = 0; i < scriptLines.length; i++) {
                 var sl = scriptLines[i]
                 var action = sl.querySelector("#actionSelector").value
                 if (action == "save") {
                     var moduleId = sl.querySelector("#moduleSelect").value
-                    var name = sl.querySelector("#moduleSelect").textContent
                     scripts.push({
                         action: action,
                         id: moduleId

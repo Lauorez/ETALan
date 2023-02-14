@@ -43,6 +43,7 @@ export default class extends AbstractView {
                     var id = script.id
                     if (script.action == "save") {
                         var req = await postJson(backend + "/var/save", script)
+                        if (req.code == 200) navigateTo("/"); else alert("Error")
                         return
                     }
                     var value = script.value
@@ -64,7 +65,7 @@ export default class extends AbstractView {
                             id: insertId
                         }
                         var req = await getJson(backend + "/var/save", getBody)
-                        var moduleValue = req["strValue"]
+                        var moduleValue = req.value
                         value = parseFloat(eval(script.value.replace(`%${insertId}%`, moduleValue).replace(",", ".")))
                     }
                     var config = await getJson(backend + "/settings/config")
@@ -75,7 +76,7 @@ export default class extends AbstractView {
                         value: (value * scaleFactor).toString()
                     }
                     var resp = await postJson(backend + "/var/set", body)
-                    if (resp.code === 200) alert("Erfolg!"); else alert("Error");
+                    if (resp.code === 200) navigateTo("/"); else alert("Error");
                 });
             }
         })

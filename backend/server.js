@@ -21,7 +21,7 @@ app.use(cors())
 app.use(expressWinston.logger({
     transports: [
         new winston.transports.Console(),
-        new winston.transports.File({ filename: "logs/latest.log"})
+        new winston.transports.File({ filename: "logs/latest.log" })
     ],
     format: winston.format.combine(
         winston.format.colorize(),
@@ -126,7 +126,9 @@ app.get("/var/save", (req, res) => {
     var saved = JSON.parse(fs.readFileSync(path.resolve("settings", "saved.json")).toString())
     if (saved[id]) {
         res.status = 200
-        res.send(saved[id])
+        res.send({
+            value: saved[id]
+        })
     } else {
         res.status = 500
         res.end()
@@ -209,13 +211,22 @@ app.post("/var/set", (req, res) => {
 
 app.post("/var/save", (req, res) => {
     var id = req.body.id;
-    getVariable(id, value => {
-        var saved = JSON.parse(fs.readFileSync(path.resolve("settings", "saved.json")).toString())
-        saved.id = value
-        fs.writeFileSync(path.resolve("settings", "saved.json"), JSON.stringify(saved))
-        res.status = 200
-        res.write(JSON.stringify(successAnswer))
-        res.end()
+    getVariable(id, (data) => {
+        parser.parseString(data, (err, result) => {
+            if (err != null) console.log(err)
+            try {
+                let json = result['eta']['value']
+                var value = json[0]['$']['strValue']
+                var saved = JSON.parse(fs.readFileSync(path.resolve("settings", "saved.json")).toString())
+                saved[id] = value
+                fs.writeFileSync(path.resolve("settings", "saved.json"), JSON.stringify(saved))
+                res.status = 200
+                res.write(JSON.stringify(successAnswer))
+                res.end()
+            } catch (ex) {
+                console.log(ex)
+            }
+        })
     })
 })
 
