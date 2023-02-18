@@ -13,6 +13,7 @@
 ### Installation (wird noch vereinfacht):
 #### Benötigt:
 - NodeJS
+- Kessel im LAN
 
 #### Aufsetzen:
 - gewünschten Backend PORT, sowie lokale IP des Kessels in backend/.env eintragen
