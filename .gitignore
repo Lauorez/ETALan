@@ -1,2 +1,4 @@
 node_modules/
 *.log
+frontend/static/js/GlobalFunctions.js
+.env
