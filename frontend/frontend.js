@@ -5,7 +5,7 @@ const app = express()
 
 app.use("/static", express.static(path.resolve(__dirname, 'static')))
 
-const port = 80
+const port = 1400
 
 app.get("/*", (req, res) => {
     res.sendFile(path.resolve("index.html"))

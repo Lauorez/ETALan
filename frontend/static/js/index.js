@@ -3,6 +3,7 @@ import Settings from "./Settings.js";
 import Quick from "./Quick.js";
 import AddQuick from "./AddQuick.js";
 import DeleteQuick from "./DeleteQuick.js";
+import Errors from "./Errors.js";
 
 export const navigateTo = url => {
     history.pushState(null, null, url);
@@ -15,7 +16,8 @@ export const router = async () => {
         { path: "/settings", view: Settings },
         { path: "/quick", view: Quick },
         { path: "/quick/add", view: AddQuick },
-        { path: "/quick/delete", view: DeleteQuick }
+        { path: "/quick/delete", view: DeleteQuick },
+        { path: "/errors", view: Errors}
     ];
 
     const potentialMatches = routes.map(route => {

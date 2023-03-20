@@ -82,6 +82,20 @@ function setVariable(uid, value, callback) {
     })
 }
 
+function getErrors(callback) {
+    http.get(`http://${host}:8080/user/errors`, (resp) => {
+        var data = ''
+        resp.on('data', (chunk) => {
+            data += chunk
+        })
+        resp.on('end', () => {
+            callback(data)
+        })
+    }).on("error", (err) => {
+        console.log("Error: " + err.message)
+    })
+}
+
 //#endregion
 
 //#region GET
@@ -126,14 +140,35 @@ app.get("/var/save", (req, res) => {
     var id = req.query.id
     var saved = JSON.parse(fs.readFileSync(path.resolve("settings", "saved.json")).toString())
     if (saved[id]) {
-        res.status = 200
+        res.status(200)
         res.send({
             value: saved[id]
         })
     } else {
-        res.status = 500
+        res.status(500)
         res.end()
     }
+})
+
+app.get("/errors", (req, res) => {
+    getErrors(data => {
+        parser.parseString(data, (err, result) => {
+            if (err != null) console.log(err)
+            try {
+                let json = result['eta']['errors'][0]['fub']
+                let errors = []
+                json.forEach(fub => {
+                    if (!fub['error']) return
+                    errors.push(fub['error'])
+                })
+                res.status(200)
+                res.write(JSON.stringify(errors))
+                res.end()
+            } catch (ex) {
+                console.log(ex)
+            }
+        })
+    })
 })
 
 //#endregion
@@ -150,14 +185,14 @@ app.post("/settings/config", (req, res) => {
         if (jsobj == null || jsobj == undefined) return;
         var strValue = JSON.stringify(jsobj);
         fs.writeFile("settings/config.json", strValue, () => {
-            res.status = 200;
+            res.status(200);
             res.write(JSON.stringify(successAnswer));
             res.end();
             console.log("Successfully set value and sent answer.")
         });
     } catch (ex) {
         console.log(ex);
-        res.status = 500;
+        res.status(500);
         res.end();
     }
 })
@@ -172,7 +207,7 @@ app.post("/settings/quick", (req, res) => {
         scripts: scripts
     })
     fs.writeFile(path.resolve("settings", "quick.json"), JSON.stringify(quicks), () => {
-        res.status = 200
+        res.status(200)
         res.write(JSON.stringify(successAnswer))
         res.end()
     })
@@ -187,7 +222,7 @@ app.post("/settings/quick/delete", (req, res) => {
         quicks.splice(index, 1)
     });
     fs.writeFile(path.resolve("settings", "quick.json"), JSON.stringify(quicks), () => {
-        res.status = 200
+        res.status(200)
         res.write(JSON.stringify(successAnswer))
         res.end()
     })
@@ -199,12 +234,12 @@ app.post("/var/set", (req, res) => {
 
     setVariable(id, value, data => {
         if (data.includes("success")) {
-            res.status = 200
+            res.status(200)
             res.write(JSON.stringify(successAnswer))
             res.end()
         } else {
             console.log("Error")
-            res.status = 500;
+            res.status(500);
             res.end()
         }
     })
@@ -221,7 +256,7 @@ app.post("/var/save", (req, res) => {
                 var saved = JSON.parse(fs.readFileSync(path.resolve("settings", "saved.json")).toString())
                 saved[id] = value
                 fs.writeFileSync(path.resolve("settings", "saved.json"), JSON.stringify(saved))
-                res.status = 200
+                res.status(200)
                 res.write(JSON.stringify(successAnswer))
                 res.end()
             } catch (ex) {
