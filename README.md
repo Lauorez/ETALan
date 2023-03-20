@@ -10,4 +10,15 @@
 - erstellt mit Node.JS
 - Vanilla JavaScript Frontend
 
-### Work in progress - WIP
+### Installation (wird noch vereinfacht):
+#### Benötigt:
+- NodeJS
+- Kessel im LAN
+
+#### Aufsetzen:
+- Repository herunterladen bzw. klonen
+- gewünschten Backend PORT, sowie lokale IP des Kessels in backend/.env eintragen
+- IP des Servers/Rechners auf dem Backend läuft in frontend/static/js/GlobalFunctions.js unten eintragen bei "export const backend = ..."
+- Backend und Frontend mit NodeJS starten
+
+## Work in progress - WIP
