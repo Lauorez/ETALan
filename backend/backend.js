@@ -173,7 +173,6 @@ app.get("/errors", (req, res) => {
     getErrors(data => {
         parser.parseString(data, (err, result) => {
             if (err != null) console.log(err)
-            console.log(result['eta']['errors'][0]['fub'][4]["error"])
             try {
                 let json = result['eta']['errors'][0]['fub']
                 let errors = []
