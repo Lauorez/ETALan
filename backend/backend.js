@@ -6,6 +6,7 @@ const xml2js = require('xml2js')
 const fs = require('fs')
 const expressWinston = require('express-winston');
 const winston = require('winston');
+const cron = require("node-cron");
 require('dotenv').config()
 
 const app = express()
@@ -43,6 +44,7 @@ function myXOR(a, b) {
 
 function getVariable(uid, callback) {
     http.get(`http://${host}:8080/user/var` + uid, (resp) => {
+        resp.setEncoding("utf-8")
         var data = ''
         resp.on('data', (chunk) => {
             data += chunk
@@ -66,6 +68,7 @@ function setVariable(uid, value, callback) {
         },
     };
     var req = http.request(options, (resp) => {
+        resp.setEncoding("utf-8")
         var data = ''
         resp.on('data', (chunk) => {
             data += chunk
@@ -84,6 +87,7 @@ function setVariable(uid, value, callback) {
 
 function getErrors(callback) {
     http.get(`http://${host}:8080/user/errors`, (resp) => {
+        resp.setEncoding("utf-8")
         var data = ''
         resp.on('data', (chunk) => {
             data += chunk
@@ -96,11 +100,20 @@ function getErrors(callback) {
     })
 }
 
+//SCHEDULE HANDLING
+
+function getSchedules() {
+    var schedules = JSON.parse(fs.readFileSync(path.resolve("settings", "schedules.json")))
+    
+}
+
 //#endregion
 
 //#region GET
 
 app.get('/api', (req, res) => {
+    res.charset = "utf-8"
+    res.set({'Content-Type': 'application/json; charset=utf-8'})
     var api = {
         version: version
     }
@@ -108,21 +121,27 @@ app.get('/api', (req, res) => {
 })
 
 app.get('/settings/modules', (req, res) => {
+    res.charset = "utf-8"
+    res.set({'Content-Type': 'application/json; charset=utf-8'})
     res.sendFile(path.join(__dirname, "/settings", 'modules.json'))
 })
 
 app.get('/settings/config', (req, res) => {
+    res.charset = "utf-8"
+    res.set({'Content-Type': 'application/json; charset=utf-8'})
     res.sendFile(path.join(__dirname, "/settings", 'config.json'))
 })
 
 app.get('/settings/quick', (req, res) => {
+    res.charset = "utf-8"
+    res.set({'Content-Type': 'application/json; charset=utf-8'})
     res.sendFile(path.join(__dirname, "/settings", 'quick.json'))
 })
 
 app.get('/var/get', (req, res) => {
     var id = req.query.id
     getVariable(id, (data) => {
-        res.writeHead(200, { "Content-Type": "application/json" })
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" })
         parser.parseString(data, (err, result) => {
             if (err != null) console.log(err)
             try {
@@ -154,13 +173,18 @@ app.get("/errors", (req, res) => {
     getErrors(data => {
         parser.parseString(data, (err, result) => {
             if (err != null) console.log(err)
+            console.log(result['eta']['errors'][0]['fub'][4]["error"])
             try {
                 let json = result['eta']['errors'][0]['fub']
                 let errors = []
                 json.forEach(fub => {
-                    if (!fub['error']) return
-                    errors.push(fub['error'])
+                    if (!fub['error']) return;
+                    fub['error'].forEach(err => {
+                        errors.push(err)
+                    })
                 })
+                res.charset = "utf-8"
+                res.set({'Content-Type': 'application/json; charset=utf-8'})
                 res.status(200)
                 res.write(JSON.stringify(errors))
                 res.end()
@@ -169,6 +193,21 @@ app.get("/errors", (req, res) => {
             }
         })
     })
+})
+
+app.get("/schedules", (req, res) => {
+    // var tasks = cron.getTasks();
+    // tasks.forEach((value, key) => {
+        
+    // })
+    console.log(cron.getTasks())
+    var task = cron.schedule("0 * * * *", () => {
+        console.log("test");
+    }, {
+        timezone: "Europe/Berlin"
+    });
+    console.log(JSON.stringify(task))
+    
 })
 
 //#endregion
@@ -185,6 +224,8 @@ app.post("/settings/config", (req, res) => {
         if (jsobj == null || jsobj == undefined) return;
         var strValue = JSON.stringify(jsobj);
         fs.writeFile("settings/config.json", strValue, () => {
+            res.charset = "utf-8"
+            res.set({'Content-Type': 'application/json; charset=utf-8'})
             res.status(200);
             res.write(JSON.stringify(successAnswer));
             res.end();
@@ -207,6 +248,8 @@ app.post("/settings/quick", (req, res) => {
         scripts: scripts
     })
     fs.writeFile(path.resolve("settings", "quick.json"), JSON.stringify(quicks), () => {
+        res.charset = "utf-8"
+        res.set({'Content-Type': 'application/json; charset=utf-8'})
         res.status(200)
         res.write(JSON.stringify(successAnswer))
         res.end()
@@ -222,6 +265,8 @@ app.post("/settings/quick/delete", (req, res) => {
         quicks.splice(index, 1)
     });
     fs.writeFile(path.resolve("settings", "quick.json"), JSON.stringify(quicks), () => {
+        res.charset = "utf-8"
+        res.set({'Content-Type': 'application/json; charset=utf-8'})
         res.status(200)
         res.write(JSON.stringify(successAnswer))
         res.end()
@@ -234,6 +279,8 @@ app.post("/var/set", (req, res) => {
 
     setVariable(id, value, data => {
         if (data.includes("success")) {
+            res.charset = "utf-8"
+            res.set({'Content-Type': 'application/json; charset=utf-8'})
             res.status(200)
             res.write(JSON.stringify(successAnswer))
             res.end()
