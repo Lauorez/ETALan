@@ -1,9 +1,9 @@
-const path = require('path')
-const express = require('express')
+import path from 'path'
+import express from 'express'
 
 const app = express()
 
-app.use("/static", express.static(path.resolve(__dirname, 'static')))
+app.use("/static", express.static(path.resolve('static')))
 
 const port = 1400
 

@@ -1,16 +1,23 @@
-const path = require('path')
-const http = require('http')
-const express = require('express')
-const cors = require('cors');
-const xml2js = require('xml2js')
-const fs = require('fs')
-const expressWinston = require('express-winston');
-const winston = require('winston');
-const cron = require("node-cron");
-require('dotenv').config()
+import { resolve } from 'path';
+import { get, request } from 'http';
+import express from 'express';
+import cors from 'cors';
+import { Parser } from 'xml2js';
+import { readFileSync, writeFile, writeFileSync } from 'fs';
+import { logger } from 'express-winston';
+import { transports as _transports, format as _format } from 'winston';
+import { getTasks, schedule } from "node-cron";
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+import ModulesConfigManager from './ModulesConfigManager.js';
+import VarManager from './VarManager.js';
+import QuickManager from './QuickManager.js';
+
 
 const app = express()
-const parser = new xml2js.Parser();
+const parser = new Parser();
 
 const port = process.env.PORT
 const PREFIX = "[ETALan]"
@@ -20,14 +27,14 @@ const host = process.env.HOST
 app.use(express.static('settings'))
 app.use(express.json())
 app.use(cors())
-app.use(expressWinston.logger({
+app.use(logger({
     transports: [
-        new winston.transports.Console(),
-        new winston.transports.File({ filename: "logs/latest.log" })
+        new _transports.Console(),
+        new _transports.File({ filename: "logs/latest.log" })
     ],
-    format: winston.format.combine(
-        winston.format.colorize(),
-        winston.format.json()
+    format: _format.combine(
+        _format.colorize(),
+        _format.json()
     ),
     meta: false,
     msg: "HTTP  ",
@@ -43,7 +50,7 @@ function myXOR(a, b) {
 }
 
 function getVariable(uid, callback) {
-    http.get(`http://${host}:8080/user/var` + uid, (resp) => {
+    get(`http://${host}:8080/user/var` + uid, (resp) => {
         resp.setEncoding("utf-8")
         var data = ''
         resp.on('data', (chunk) => {
@@ -67,7 +74,7 @@ function setVariable(uid, value, callback) {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
     };
-    var req = http.request(options, (resp) => {
+    var req = request(options, (resp) => {
         resp.setEncoding("utf-8")
         var data = ''
         resp.on('data', (chunk) => {
@@ -86,7 +93,7 @@ function setVariable(uid, value, callback) {
 }
 
 function getErrors(callback) {
-    http.get(`http://${host}:8080/user/errors`, (resp) => {
+    get(`http://${host}:8080/user/errors`, (resp) => {
         resp.setEncoding("utf-8")
         var data = ''
         resp.on('data', (chunk) => {
@@ -103,7 +110,7 @@ function getErrors(callback) {
 //SCHEDULE HANDLING
 
 function getSchedules() {
-    var schedules = JSON.parse(fs.readFileSync(path.resolve("settings", "schedules.json")))
+    var schedules = JSON.parse(readFileSync(resolve("settings", "schedules.json")))
     
 }
 
@@ -123,41 +130,35 @@ app.get('/api', (req, res) => {
 app.get('/settings/modules', (req, res) => {
     res.charset = "utf-8"
     res.set({'Content-Type': 'application/json; charset=utf-8'})
-    res.sendFile(path.join(__dirname, "/settings", 'modules.json'))
+    var mcm = new ModulesConfigManager(host);
+    res.send(mcm.getModules());
 })
 
 app.get('/settings/config', (req, res) => {
     res.charset = "utf-8"
     res.set({'Content-Type': 'application/json; charset=utf-8'})
-    res.sendFile(path.join(__dirname, "/settings", 'config.json'))
+    var mcm = new ModulesConfigManager(host);
+    res.send(mcm.getConfig())
 })
 
 app.get('/settings/quick', (req, res) => {
     res.charset = "utf-8"
     res.set({'Content-Type': 'application/json; charset=utf-8'})
-    res.sendFile(path.join(__dirname, "/settings", 'quick.json'))
+    var qm = new QuickManager(host);
+    res.send(qm.getSavedQuicks());
 })
 
-app.get('/var/get', (req, res) => {
+app.get('/var/get', async (req, res) => {
     var id = req.query.id
-    getVariable(id, (data) => {
-        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" })
-        parser.parseString(data, (err, result) => {
-            if (err != null) console.log(err)
-            try {
-                let json = result['eta']['value']
-                res.write(JSON.stringify(json[0]['$']))
-                res.end()
-            } catch (ex) {
-                console.log(ex)
-            }
-        })
-    })
+    var vm = new VarManager(host);
+    var data = await vm.getVariable(id);
+    // TODO: parser in varmanager & dementsprechende anpassungen, /var/save bearbeiten bzw get post löschen
+    res.send(data);
 })
 
 app.get("/var/save", (req, res) => {
     var id = req.query.id
-    var saved = JSON.parse(fs.readFileSync(path.resolve("settings", "saved.json")).toString())
+    var saved = JSON.parse(readFileSync(resolve("settings", "saved.json")).toString())
     if (saved[id]) {
         res.status(200)
         res.send({
@@ -199,8 +200,8 @@ app.get("/schedules", (req, res) => {
     // tasks.forEach((value, key) => {
         
     // })
-    console.log(cron.getTasks())
-    var task = cron.schedule("0 * * * *", () => {
+    console.log(getTasks())
+    var task = schedule("0 * * * *", () => {
         console.log("test");
     }, {
         timezone: "Europe/Berlin"
@@ -222,7 +223,7 @@ app.post("/settings/config", (req, res) => {
         var jsobj = req.body;
         if (jsobj == null || jsobj == undefined) return;
         var strValue = JSON.stringify(jsobj);
-        fs.writeFile("settings/config.json", strValue, () => {
+        writeFile("settings/config.json", strValue, () => {
             res.charset = "utf-8"
             res.set({'Content-Type': 'application/json; charset=utf-8'})
             res.status(200);
@@ -241,12 +242,12 @@ app.post("/settings/quick", (req, res) => {
     var name = req.body.name
     var scripts = req.body.scripts
 
-    var quicks = JSON.parse(fs.readFileSync(path.resolve("settings", "quick.json")))
+    var quicks = JSON.parse(readFileSync(resolve("settings", "quick.json")))
     quicks.push({
         name: name,
         scripts: scripts
     })
-    fs.writeFile(path.resolve("settings", "quick.json"), JSON.stringify(quicks), () => {
+    writeFile(resolve("settings", "quick.json"), JSON.stringify(quicks), () => {
         res.charset = "utf-8"
         res.set({'Content-Type': 'application/json; charset=utf-8'})
         res.status(200)
@@ -257,19 +258,26 @@ app.post("/settings/quick", (req, res) => {
 
 app.post("/settings/quick/delete", (req, res) => {
     var toRemove = req.body
-    var quicks = JSON.parse(fs.readFileSync(path.resolve("settings", "quick.json")))
+    var quicks = JSON.parse(readFileSync(resolve("settings", "quick.json")))
     toRemove.forEach(element => {
         var match = quicks.find(quick => quick.name == element)
         var index = quicks.indexOf(match)
         quicks.splice(index, 1)
     });
-    fs.writeFile(path.resolve("settings", "quick.json"), JSON.stringify(quicks), () => {
+    writeFile(resolve("settings", "quick.json"), JSON.stringify(quicks), () => {
         res.charset = "utf-8"
         res.set({'Content-Type': 'application/json; charset=utf-8'})
         res.status(200)
         res.write(JSON.stringify(successAnswer))
         res.end()
     })
+})
+
+app.post("/quick/run", (req, res) => {
+    var name = req.body.name;
+    var qm = new QuickManager(host);
+    qm.runQuick(name);
+    res.send(JSON.stringify(successAnswer));
 })
 
 app.post("/var/set", (req, res) => {
@@ -299,9 +307,9 @@ app.post("/var/save", (req, res) => {
             try {
                 let json = result['eta']['value']
                 var value = json[0]['$']['strValue']
-                var saved = JSON.parse(fs.readFileSync(path.resolve("settings", "saved.json")).toString())
+                var saved = JSON.parse(readFileSync(resolve("settings", "saved.json")).toString())
                 saved[id] = value
-                fs.writeFileSync(path.resolve("settings", "saved.json"), JSON.stringify(saved))
+                writeFileSync(resolve("settings", "saved.json"), JSON.stringify(saved))
                 res.status(200)
                 res.write(JSON.stringify(successAnswer))
                 res.end()
